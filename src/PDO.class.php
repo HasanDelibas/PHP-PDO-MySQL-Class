@@ -137,7 +137,7 @@ class DB
 		$rawStatement = explode(" ", $query);
 		$this->Init($query, $params);
 		$statement = strtolower($rawStatement[0]);
-		if ($statement === 'select' || $statement === 'show') {
+		if ($statement === 'select' || $statement === 'show' || $statement === 'call') {
 			return $this->sQuery->fetchAll($fetchmode);
 		} elseif ($statement === 'insert' || $statement === 'update' || $statement === 'delete') {
 			return $this->sQuery->rowCount();
